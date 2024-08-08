@@ -1,0 +1,23 @@
+kubectl cluster-info --context kind-cka-cluster1
+kubectl cluster-info --context kind-cka-cluster2
+
+kubectl config get-contexts
+
+kubectl config use-context kind-cka-cluster1
+
+kubectl run nginx-pod --image=nginx:latest
+kubectl apply -f pod-new.yaml
+kubectl create -f pod-new.yaml
+
+kubectl get pofs
+kubectl describe pod nginx-pod
+kubectl edit pod nginx-pod
+
+kubectl get nodes
+
+kubectl run nginx-new --image=nginx --dry-run=client -o yaml > new.yaml
+
+kubectl desrribe pod nginx-new -o wide 
+
+kubectl config use-context kind-ckA-ckuster2
+
