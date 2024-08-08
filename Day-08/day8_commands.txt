@@ -1,0 +1,14 @@
+
+
+
+kubectl scale --replicase=10 deplay/nginx-deploy
+kubectl explain rs rc deploy
+
+kubectl set image deploy/nginx-deply nginx=nginx1.09.1
+kubectl rollout history deploy/nginx=deploy
+kubectl rollout undo deploy/nginx-deply-
+
+
+
+
+
