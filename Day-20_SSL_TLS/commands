@@ -1,0 +1,7 @@
+openssl genrsa -out krishna.key 2048
+openssl req -new -key krishna.key -out krishna.csr -subj="/CN=krishna"
+kubectl get csr 
+kubectl certificate approve krishna
+cat krishna.csr | base64 | tr -d "\n"
+kubectl config set-credentials krishna --client-key=krishna.key --client-certificate=krishna.crt
+kubectl config set-context krishna --cluster=kind-cka-cluster3 --user=krishna
